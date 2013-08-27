@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    <TextView
+        android:id="@+id/total_steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:height="30dp"
+        android:text="@string/steps_total"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/congrat_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="66dp"
+        android:gravity="center_horizontal"
+        android:height="30dp"
+        android:text="@string/congrat"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
+  	<TextView
+        android:id="@+id/step_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/total_steps"
+        android:layout_toRightOf="@id/total_steps"
+        android:textColor="#FF0000"
+        android:textSize="24sp"
+        android:typeface="monospace" 
+        android:text="1213"/>
+
+  	<TextView
+  	    android:id="@+id/congrat_msg2"
+  	    android:layout_width="wrap_content"
+  	    android:layout_height="wrap_content"
+  	    android:layout_alignParentLeft="true"
+  	    android:layout_alignParentTop="true"
+  	    android:layout_marginLeft="20dp"
+  	    android:layout_marginTop="31dp"
+  	    android:gravity="center_horizontal"
+  	    android:height="30dp"
+  	    android:text="@string/win"
+  	    android:textColor="#FF0000"
+  	    android:textSize="24sp"
+  	    android:typeface="monospace" />
+		
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TilePuzzle</string>
+    <string name="easy">EASY</string>
+    <string name="medium">MEDIUM</string>
+    <string name="hard">HARD</string>
+    <string name="steps_total">Total Steps:</string>
+    <string name="congrat">CONGRATULATIONS!!!</string>
+    <string name="win">YOU WIN!!!!!!</string>
+    
+
+</resources>
