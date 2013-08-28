@@ -8,6 +8,8 @@
     <string name="steps_total">Total Steps:</string>
     <string name="congrat">CONGRATULATIONS!!!</string>
     <string name="win">YOU WIN!!!!!!</string>
+    <string name="ubc_logo">Logo</string>
+    <string name="index">Index</string>
     
 
 </resources>
