@@ -25,12 +25,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int Difficulty_Level_1=0x7f080001;
         public static final int alarm_enabled=0x7f080008;
         public static final int button_test=0x7f080007;
         public static final int congrat_msg=0x7f080003;
         public static final int congrat_msg2=0x7f080005;
-        public static final int image_list=0x7f080001;
-        public static final int image_selection_relative_layout=0x7f080000;
+        public static final int image_list=0x7f080000;
         public static final int step_num=0x7f080004;
         public static final int text=0x7f080006;
         public static final int total_steps=0x7f080002;
@@ -62,13 +62,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -88,9 +86,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f070001;
-        public static final int ButtonBar=0x7f070003;
-        public static final int ButtonBarButton=0x7f070004;
-        public static final int FullscreenActionBarStyle=0x7f070005;
+        public static final int FullscreenActionBarStyle=0x7f070003;
         public static final int FullscreenTheme=0x7f070002;
     }
     public static final class styleable {

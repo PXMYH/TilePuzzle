@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/image_selection_relative_layout"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    
-<!-- 	<ImageView
-		android:id="@+id/country_icon"
-		android:layout_gravity="left"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content" /> -->
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 		
     <ListView
         android:id="@+id/image_list"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="450dp"
-        android:gravity="center" >
-    </ListView>
+        android:gravity="center" />
     
-<!-- 
+    
+
     <Button
         android:id="@+id/Difficulty_Level_1"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+        
         android:layout_marginLeft="20dp"
         android:layout_marginTop="12dp"
-        android:layout_below="@id/image_list"
+        
         android:onClick="ImageBreakdown"
         android:text="@string/easy" />
     
 
-    <Button
+<!--     <Button
         android:id="@+id/Difficulty_Level_2"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -54,4 +48,4 @@
         android:layout_marginTop="12dp"
         android:text="@string/hard" /> -->
 
-</RelativeLayout>
+</LinearLayout>
