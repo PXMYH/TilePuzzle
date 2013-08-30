@@ -3,12 +3,12 @@ package com.px.tilepuzzle;
 import java.lang.reflect.Field;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-//import android.content.Context;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -18,6 +18,7 @@ public class ListImageAdapter extends BaseAdapter {
 	private Integer[] list_adapter_images;
 	private Bitmap[] list_adapter_cache;
 	
+	// constructor
 	public ListImageAdapter (Context c) {
 		// set the list image adapter's context as to what context images are placed into
 		list_adapter_context = c;
@@ -44,8 +45,9 @@ public class ListImageAdapter extends BaseAdapter {
 		int list_img_idx = 0;
 		try {
 			for(int i=0; i < img_length; i++)
-				if(list_adapter_gallery[i].getName().startsWith("img_"))
+				if(list_adapter_gallery[i].getName().startsWith("logo")) {
 					list_adapter_images[list_img_idx++] = list_adapter_gallery[i].getInt(null);
+				}
 		} catch(Exception e) {}
 	}
 	
@@ -54,11 +56,13 @@ public class ListImageAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView list_img_View;
 		
+		Log.i("ListImageAdapter", "Inside getView method");
+		
 		// Check existance of  convertable view
 		if(convertView == null) {
 			// create a new view
 			list_img_View = new ImageView(list_adapter_context);
-			list_img_View.setLayoutParams(new ListView.LayoutParams(50,50));
+			list_img_View.setLayoutParams(new ListView.LayoutParams(ListView.LayoutParams.FILL_PARENT,100));
 
 		} else {
 			// recycle an old view (it might have old thumbs in it!)
@@ -78,7 +82,7 @@ public class ListImageAdapter extends BaseAdapter {
 			}
 			
 			list_img_View.setImageBitmap(list_adapter_cache[position]);
-	
+			
 		}
 		return list_img_View;
 	}
