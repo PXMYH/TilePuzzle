@@ -10,6 +10,7 @@
     <string name="win">YOU WIN!!!!!!</string>
     <string name="ubc_logo">Logo</string>
     <string name="index">Index</string>
+    <string name="full_image_display">Display Full Image</string>
     
 
 </resources>

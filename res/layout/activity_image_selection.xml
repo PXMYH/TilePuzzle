@@ -29,6 +29,8 @@
 		        android:layout_marginRight="7dp"
 		        android:onClick="ImageBreakdown"
 		        />
+
+
 			
 		    <Button
 		        android:id="@+id/Difficulty_Medium"
