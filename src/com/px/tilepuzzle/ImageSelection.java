@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
 import android.widget.ListView;
+import android.widget.Button;
 
 
 public class ImageSelection extends Activity {
@@ -29,6 +30,9 @@ public class ImageSelection extends Activity {
         ListView img_list = (ListView)findViewById(R.id.image_list);
         Log.i(getPackageName(), "We are out of listview");
         img_list.setAdapter(new ListImageAdapter(this));
+        
+        // Set the behavior of difficulty level buttons
+        Button diff_button_easy = (Button)findViewById(R.id.Difficulty_Easy);
 	}
 	
 	private void showMessage (CharSequence text) {

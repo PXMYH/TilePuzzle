@@ -12,40 +12,46 @@
         android:gravity="center" />
     
     
-
-    <Button
-        android:id="@+id/Difficulty_Level_1"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
-        
-        android:onClick="ImageBreakdown"
-        android:text="@string/easy" />
+    <!-- Nested View for Buttons -->
+    	<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center" 
+			>
+			<Button 
+		        android:id="@+id/Difficulty_Easy"
+		        android:text="@string/easy"
+		        android:layout_width="110dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="7dp"
+		        android:layout_marginLeft="5dp"
+		        android:layout_marginRight="7dp"
+		        android:onClick="ImageBreakdown"
+		        />
+			
+		    <Button
+		        android:id="@+id/Difficulty_Medium"
+		        android:text="@string/medium"
+		        android:layout_width="110dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="7dp"
+				android:layout_marginLeft="7dp"
+				android:layout_marginRight="7dp"
+		        android:onClick="ImageBreakdown"
+		        />
+		    
+		  	<Button
+		        android:id="@+id/Difficulty_Hard"
+		        android:text="@string/hard"
+		        android:layout_width="110dp"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="7dp"
+		        android:layout_marginLeft="7dp"
+		        android:layout_marginRight="5dp"
+		        android:onClick="ImageBreakdown"
+		        />
+		    
+		</LinearLayout>
     
-
-<!--     <Button
-        android:id="@+id/Difficulty_Level_2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="false"
-        android:layout_marginTop="12dp"
-        android:layout_below="@id/image_list"
-        android:layout_centerHorizontal="true"
-        android:onClick="ImageBreakdown"
-        android:text="@string/medium" />
-
-	 <Button
-        android:id="@+id/Difficulty_Level_3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="false"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/image_list"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/hard" /> -->
-
 </LinearLayout>

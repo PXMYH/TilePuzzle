@@ -25,15 +25,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int Difficulty_Level_1=0x7f080001;
-        public static final int alarm_enabled=0x7f080008;
-        public static final int button_test=0x7f080007;
-        public static final int congrat_msg=0x7f080003;
-        public static final int congrat_msg2=0x7f080005;
+        public static final int Difficulty_Easy=0x7f080001;
+        public static final int Difficulty_Hard=0x7f080003;
+        public static final int Difficulty_Medium=0x7f080002;
+        public static final int alarm_enabled=0x7f08000a;
+        public static final int button_test=0x7f080009;
+        public static final int congrat_msg=0x7f080005;
+        public static final int congrat_msg2=0x7f080007;
         public static final int image_list=0x7f080000;
-        public static final int step_num=0x7f080004;
-        public static final int text=0x7f080006;
-        public static final int total_steps=0x7f080002;
+        public static final int step_num=0x7f080006;
+        public static final int text=0x7f080008;
+        public static final int total_steps=0x7f080004;
     }
     public static final class layout {
         public static final int activity_game_play=0x7f030000;
@@ -43,9 +45,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int image_selection_list=0x7f030004;
     }
     public static final class raw {
-        public static final int logo_ubc_b=0x7f040000;
-        public static final int logo_ubc_thunderbird=0x7f040001;
-        public static final int logo_ubc_w=0x7f040002;
+        public static final int logo_ubc=0x7f040000;
+        public static final int logo_ubc_b=0x7f040001;
+        public static final int logo_ubc_black=0x7f040002;
+        public static final int logo_ubc_g=0x7f040003;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
