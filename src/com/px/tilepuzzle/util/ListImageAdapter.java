@@ -1,6 +1,9 @@
-package com.px.tilepuzzle;
+package com.px.tilepuzzle.util;
 
 import java.lang.reflect.Field;
+
+import com.px.tilepuzzle.R;
+import com.px.tilepuzzle.R.drawable;
 
 import android.content.Context;
 import android.util.Log;
@@ -24,7 +27,7 @@ public class ListImageAdapter extends BaseAdapter {
 		list_adapter_context = c;
 		
 		// Dynamically monitoring the raw folder to extract images placed into the folder information
-		Field[] list_adapter_gallery = R.raw.class.getFields();
+		Field[] list_adapter_gallery = R.drawable.class.getFields();
 		
 		int img_cnt = 0;
 		int img_length = list_adapter_gallery.length;
@@ -32,7 +35,7 @@ public class ListImageAdapter extends BaseAdapter {
 		// Get the number of logo images in the res/raw folder
 		for (int i = 0; i< img_length; i++) 
 		{
-			if ( list_adapter_gallery[i].getName().startsWith("logo") )
+			if ( list_adapter_gallery[i].getName().startsWith("puzzle") )
 				img_cnt ++;
 		}
 		
@@ -45,7 +48,7 @@ public class ListImageAdapter extends BaseAdapter {
 		int list_img_idx = 0;
 		try {
 			for(int i=0; i < img_length; i++)
-				if(list_adapter_gallery[i].getName().startsWith("logo")) {
+				if(list_adapter_gallery[i].getName().startsWith("puzzle")) {
 					list_adapter_images[list_img_idx++] = list_adapter_gallery[i].getInt(null);
 				}
 		} catch(Exception e) {}

@@ -1,4 +1,7 @@
-package com.px.tilepuzzle;
+package com.px.tilepuzzle.util;
+
+import com.px.tilepuzzle.R;
+import com.px.tilepuzzle.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;

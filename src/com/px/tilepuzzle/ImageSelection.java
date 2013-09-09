@@ -2,6 +2,10 @@ package com.px.tilepuzzle;
 
 
 /*import com.px.tilepuzzle.ListImageAdapter;*/
+import com.px.tilepuzzle.util.DisplaySolution;
+import com.px.tilepuzzle.util.ImageBreakdown;
+import com.px.tilepuzzle.util.ListImageAdapter;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;

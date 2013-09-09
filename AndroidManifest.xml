@@ -44,11 +44,11 @@
         </activity>
         
         <activity 
-            android:name="com.px.tilepuzzle.ImageBreakdown" >
+            android:name="com.px.tilepuzzle.util.ImageBreakdown" >
         </activity>
         
         <activity
-            android:name="com.px.tilepuzzle.DisplaySolution"
+            android:name="com.px.tilepuzzle.util.DisplaySolution"
             android:label="@string/full_image_display"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             
