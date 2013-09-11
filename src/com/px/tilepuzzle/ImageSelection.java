@@ -32,7 +32,7 @@ public class ImageSelection extends Activity implements OnItemClickListener {
         // Find the list image view by ID and pass it to customized list image adapter
         // The customized list image adapter is defined in ListImageAdapter.java
         ListView img_list = (ListView)findViewById(R.id.image_list);
-        Log.i(getPackageName(), "We are out of listview");
+        Log.i("Image Selection", "***** checkpoint 1 *****");
         img_list.setAdapter(new ListImageAdapter(this));
         
         // Set the behavior of difficulty level buttons

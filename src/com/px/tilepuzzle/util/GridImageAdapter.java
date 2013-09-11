@@ -10,23 +10,22 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.widget.GridView;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* BoardDisplay.java
- * This util java script defines customized tile game board style in gridview layout
+/* GridImageAdapter.java
+ * This util java script defines customized tile game board style in GridView layout
  */
 
-public class BoardDisplay extends BaseAdapter {
+public class GridImageAdapter extends BaseAdapter {
 	private Context grid_adapter_context;
 	private Integer[] grid_adapter_images;
 	private Bitmap[] grid_adapter_cache;
 	
 	
 	// Constructor
-	public BoardDisplay (Context c) {
+	public GridImageAdapter (Context c) {
 		grid_adapter_context = c;
 		Log.i("board display", "***** checkpoint 1 *****");
 		
@@ -62,14 +61,18 @@ public class BoardDisplay extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView board_View;
         Log.i("board display", "***** checkpoint 2 *****");
-        if (convertView == null) {  // if it's not recycled, initialize some attributes
+        
+        if (convertView == null) { 
+        	
+        	// if it's not recycled, initialize some attributes
         	board_View = new ImageView(grid_adapter_context);
         	
         	board_View.setLayoutParams(new GridView.LayoutParams(100, 100));
             //imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             //imageView.setPadding(8, 8, 8, 8);
             Log.i("board display", "***** checkpoint 3 *****");
-        } else {
+        } 
+        else {
         	board_View = (ImageView) convertView;
             Log.i("board display", "***** checkpoint 4 *****");
         }

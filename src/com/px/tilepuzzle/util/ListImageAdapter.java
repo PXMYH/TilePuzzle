@@ -59,24 +59,23 @@ public class ListImageAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView list_img_View;
 		
-		Log.i("ListImageAdapter", "Inside getView method");
+		Log.i("ListImageAdapter", "***** checkpoint 1 *****");
 		
 		// Check existance of  convertable view
 		if(convertView == null) {
 			// create a new view
 			list_img_View = new ImageView(list_adapter_context);
 			list_img_View.setLayoutParams(new ListView.LayoutParams(ListView.LayoutParams.WRAP_CONTENT,ListView.LayoutParams.WRAP_CONTENT));
-			Log.i("getView","ConvertView exists");
+			Log.i("ListImageAdapter","***** checkpoint 2 *****");
 		} else {
 			// recycle an old view (it might have old thumbs in it!)
 			list_img_View = (ImageView) convertView;
-			Log.i("getView","ConvertView exists");
-			
+			Log.i("ListImageAdapter","***** checkpoint 3 *****");
 		}
 			
 		// see if a resized thumbnail is already in cache
 		if(list_adapter_cache[position] == null) {
-				Log.i("getView","Checking Cache");
+				Log.i("ListImageAdapter","***** checkpoint 4 *****");
 				// create a new Bitmap that stores a resized
 				// version of the image we want to display. 
 				BitmapFactory.Options options = new BitmapFactory.Options();
@@ -86,8 +85,9 @@ public class ListImageAdapter extends BaseAdapter {
 				// store the resized thumb in a cache so we don't have to re-generate it
 				list_adapter_cache[position] = thumb;
 			}
-			Log.i("Out of Cache", "loading file from cache");
-			list_img_View.setImageBitmap(list_adapter_cache[position]);
+		
+		Log.i("ListImageAdapter", "***** checkpoint 5 *****");
+		list_img_View.setImageBitmap(list_adapter_cache[position]);
 	
 		return list_img_View;
 	}

@@ -35,7 +35,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Difficulty_Hard=0x7f070003;
         public static final int Difficulty_Medium=0x7f070002;
         public static final int alarm_enabled=0x7f07000c;
-        public static final int board_display=0x7f070008;
+        public static final int board_display_grid=0x7f070008;
         public static final int button_test=0x7f07000b;
         public static final int congrat_msg=0x7f070005;
         public static final int congrat_msg2=0x7f070007;
