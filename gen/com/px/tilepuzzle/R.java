@@ -34,15 +34,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Difficulty_Easy=0x7f070001;
         public static final int Difficulty_Hard=0x7f070003;
         public static final int Difficulty_Medium=0x7f070002;
-        public static final int alarm_enabled=0x7f07000c;
+        public static final int alarm_enabled=0x7f07000d;
         public static final int board_display_grid=0x7f070008;
-        public static final int button_test=0x7f07000b;
+        public static final int button1=0x7f070009;
+        public static final int button_test=0x7f07000c;
         public static final int congrat_msg=0x7f070005;
         public static final int congrat_msg2=0x7f070007;
-        public static final int display_solution=0x7f070009;
+        public static final int display_solution=0x7f07000a;
         public static final int image_list=0x7f070000;
         public static final int step_num=0x7f070006;
-        public static final int text=0x7f07000a;
+        public static final int text=0x7f07000b;
         public static final int total_steps=0x7f070004;
     }
     public static final class layout {
@@ -58,10 +59,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f050000;
         public static final int congrat=0x7f050005;
         public static final int easy=0x7f050001;
-        public static final int full_image_display=0x7f050009;
         public static final int hard=0x7f050003;
         public static final int index=0x7f050008;
         public static final int medium=0x7f050002;
+        public static final int solution_display=0x7f050009;
         public static final int steps_total=0x7f050004;
         public static final int ubc_logo=0x7f050007;
         public static final int win=0x7f050006;

@@ -1,7 +1,6 @@
 package com.px.tilepuzzle;
 
 
-/*import com.px.tilepuzzle.ListImageAdapter;*/
 import com.px.tilepuzzle.util.DisplaySolution;
 import com.px.tilepuzzle.util.ImageBreakdown;
 import com.px.tilepuzzle.util.ListImageAdapter;
@@ -17,6 +16,7 @@ import android.widget.Toast;
 import android.widget.ListView;
 import android.widget.Button;
 import android.content.Intent;
+import android.view.View.OnClickListener;
 
 
 public class ImageSelection extends Activity implements OnItemClickListener {
@@ -65,10 +65,20 @@ public class ImageSelection extends Activity implements OnItemClickListener {
     	// pass a key:value pair into the 'extra' bundle for
     	// the intent so the activity is made aware which
     	// photo was selected.
-    	i.putExtra("imageToDisplay", id);
+    	//i.putExtra("imageToDisplay", id);
 
     	// start our activity
     	startActivity(i);
     }
+    
+//    @Override
+//    public void onClick(View v) {
+//    	
+//    	Intent i = new Intent(this, DisplaySolution.class);
+//    	startActivity(i);
+//    }
 	
 }
+
+
+

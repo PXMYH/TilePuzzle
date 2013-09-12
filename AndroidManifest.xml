@@ -47,12 +47,17 @@
             android:name="com.px.tilepuzzle.util.ImageBreakdown" >
         </activity>
         
+
         <activity
             android:name="com.px.tilepuzzle.util.DisplaySolution"
-            android:label="@string/full_image_display"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            
+            android:label="@string/solution_display"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        
     </application>
 
 </manifest>

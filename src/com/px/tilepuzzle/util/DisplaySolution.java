@@ -1,5 +1,6 @@
 package com.px.tilepuzzle.util;
 
+import com.px.tilepuzzle.util.GridImageAdapter;
 
 import com.px.tilepuzzle.R;
 import com.px.tilepuzzle.R.id;
@@ -14,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,8 +25,12 @@ import android.widget.AdapterView.OnItemClickListener;
 /* DisplaySolution.java
  * A new activity that accepts, via the Intent bundle,
  * an ID representing the image to display full-screen
- * to the user.
- */
+ * to the user.*/
+ 
+
+
+
+
 
 public class DisplaySolution extends Activity {
 
@@ -32,6 +38,7 @@ public class DisplaySolution extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
         setContentView(R.layout.board_display);
+        
 
         //Log.i("display solution", "***** checkpoint 1 *****");
         
