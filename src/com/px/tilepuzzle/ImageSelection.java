@@ -21,26 +21,42 @@ import android.view.View.OnClickListener;
 
 public class ImageSelection extends Activity implements OnItemClickListener {
 	
+	private Button diff_button_easy, diff_button_medium, diff_button_hard;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_image_selection);
         
-        CharSequence toast_msg = "List of UBC Logo is loaded";
+        CharSequence toast_msg = "Loaded UBC Logo";
         showMessage (toast_msg);
 		
         // Find the list image view by ID and pass it to customized list image adapter
         // The customized list image adapter is defined in ListImageAdapter.java
-        ListView img_list = (ListView)findViewById(R.id.image_list);
-        Log.i("Image Selection", "***** checkpoint 1 *****");
-        img_list.setAdapter(new ListImageAdapter(this));
+        ListView logo_list = (ListView)findViewById(R.id.image_list);
+        logo_list.setAdapter(new ListImageAdapter(this));
+        logo_list.setOnItemClickListener(this);
         
         // Set the behavior of difficulty level buttons
-//        Button diff_button_easy = (Button)findViewById(R.id.Difficulty_Easy);
-//        Button diff_button_medium = (Button)findViewById(R.id.Difficulty_Medium);
-//        Button diff_button_hard = (Button)findViewById(R.id.Difficulty_Hard);
+        diff_button_easy = (Button)findViewById(R.id.Difficulty_Easy);
+        diff_button_medium = (Button)findViewById(R.id.Difficulty_Medium);
+        diff_button_hard = (Button)findViewById(R.id.Difficulty_Hard);
         
-        img_list.setOnItemClickListener(this);
+        diff_button_easy.setOnClickListener((OnClickListener) this);
+	}
+	
+	public void onClick(View v) {
+		CharSequence text;
+
+		// find out which button was pushed based on its ID
+		switch(v.getId()) {
+			case R.id.Difficulty_Easy: text = "'accept' clicked!"; break;
+			case R.id.Difficulty_Hard: text = "'cancel' clicked!"; break;
+			default: text="Dunno what was pushed!";
+		}
+
+		// notify the user which button was clicked
+		showMessage(text);
 	}
 	
 	private void showMessage (CharSequence text) {
@@ -60,23 +76,16 @@ public class ImageSelection extends Activity implements OnItemClickListener {
     public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
     	
     	// create the Intent to open our ShowImage activity.
-    	Intent i = new Intent(this, DisplaySolution.class);
+    	Intent solution = new Intent(this, DisplaySolution.class);
    
     	// pass a key:value pair into the 'extra' bundle for
     	// the intent so the activity is made aware which
     	// photo was selected.
-    	//i.putExtra("imageToDisplay", id);
+    	solution.putExtra("ubc_logo", id);
 
     	// start our activity
-    	startActivity(i);
+    	startActivity(solution);
     }
-    
-//    @Override
-//    public void onClick(View v) {
-//    	
-//    	Intent i = new Intent(this, DisplaySolution.class);
-//    	startActivity(i);
-//    }
 	
 }
 

@@ -10,6 +10,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,53 +31,80 @@ import android.widget.AdapterView.OnItemClickListener;
  * an ID representing the image to display full-screen
  * to the user.*/
  
+public class DisplaySolution extends Activity implements OnClickListener{
 
-
-
-
-
-public class DisplaySolution extends Activity {
-
+    private static final int num_vert_squares = 4;
+    private static final int num_hori_squares = 4 ;
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-        setContentView(R.layout.board_display);
-        
-
-        //Log.i("display solution", "***** checkpoint 1 *****");
-        
-        // find our ImageView in the layout
-        //ImageView image = (ImageView)findViewById(R.id.display_solution);
-        //GridView image = (GridView)findViewById(R.id.display_solution);
+        setContentView(R.layout.solution_display);
         
         // retrieve the set of data passed to us by the Intent
-        //Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
 
-        // and retrieve the imageToDisplay ID from the extras bundle
-        //int resource = (int)extras.getLong("imageToDisplay");
-
-        //Log.i("display solution", "***** checkpoint 2 *****");
-        GridView board = (GridView) findViewById(R.id.board_display_grid);
-        Log.i("display solution", "***** checkpoint 3 *****");
+        // retrieve the ubc logo ID from the extras bundle
+        int logo_id = (int)extras.getLong("ubc_logo");
         
-        board.setAdapter(new GridImageAdapter (this));
-        Log.i("display solution", "***** checkpoint 4 *****");
-        //Bitmap background = BitmapFactory.decodeResource(this.getResources(), resource);
-        //Bitmap tile = Bitmap.createBitmap(background, 0, 0, 100, 100);
+        // Create a square bitmap image based on non-square logo retrieved
+        Bitmap logo_orig = BitmapFactory.decodeResource(this.getResources(), logo_id);
+        
+        // Get the background color of the bitmap image
+        int logo_height = logo_orig.getHeight();
+        int logo_bg_color = logo_orig.getPixel(0, logo_orig.getHeight()-1);
+        
+        // Scale the image while preserving the aspect ratio
+        int screenWidth  = this.getResources().getDisplayMetrics().widthPixels;
+        int screenHeight = this.getResources().getDisplayMetrics().heightPixels;
+        final int screen_Ratio = screenWidth / logo_orig.getHeight();
+        
+        Bitmap logo_scale = Bitmap.createScaledBitmap(logo_orig,screen_Ratio*logo_orig.getWidth(),screenWidth,true);
+        
+        Canvas logo_canvas;
+        Bitmap logo_background;
+        Paint logo_bg_paint = new Paint();
+        
+        if (logo_orig.getHeight() > logo_orig.getWidth()) {
+        	logo_background = Bitmap.createBitmap(screenWidth, screenWidth, Bitmap.Config.ARGB_8888);
+        	logo_canvas = new Canvas (logo_background);
+/*        	float trans_y_canvas =  (screenHeight - screenWidth) / 2;
+        	float trans_x_canvas =  0;
+        	logo_canvas.translate(trans_x_canvas, trans_y_canvas);*/
+        	logo_canvas.drawColor(logo_bg_color);   
+        	int logo_pos_width = screenWidth/2 - screen_Ratio*logo_orig.getWidth()/2;
+        	//int logo_pos_height= screenHeight/2 - screenWidth/2;
+        	//logo_canvas.drawBitmap(logo_scale, logo_pos_width, logo_pos_height, logo_bg_paint);
+        	logo_canvas.drawBitmap(logo_scale, logo_pos_width, 0, logo_bg_paint);
+        } else {
+        	logo_background = Bitmap.createBitmap(screenHeight, screenHeight, Bitmap.Config.ARGB_8888);
+        	logo_canvas = new Canvas (logo_background);
+        	logo_canvas.drawColor(Color.GREEN); 
+        	logo_canvas.drawBitmap(logo_scale, 0, screenWidth/4, logo_bg_paint);       	
+        }
+        
+        logo_canvas.setBitmap(null);        
+        
+        // Crop logo into 16 pieces
+        //Bitmap tile = Bitmap.createBitmap(logo_square, 0, 0, 100, 100);
         //background.recycle();
         //image.setImageBitmap(tile);
-        
-        // Scale the image to full screen while preserving the aspect ratio
-        //final double scale_ratio = (double) image.getWidth() / (double) background.getWidth();
-        //image.setLayoutParams() = (int) (background.getHeight() * scale_ratio);
-        
+
+        //GridView board = (GridView) findViewById(R.id.board_display_grid);
+        //board.setAdapter(new GridImageAdapter (this));
+
+        // find our ImageView in the layout
+        ImageView image = (ImageView)findViewById(R.id.solution_display);
+        image.setImageBitmap(logo_background);
         
         // set the ImageView to display the specified resource ID
         //image.setImageResource(resource);
 
         // close the Activity when a user taps/clicks on the image.
-        //board.setOnItemClickListener(this);
-        //image.setOnClickListener(this);
-        //Log.i("display solution", "***** checkpoint 5 *****");
+        image.setOnClickListener(this);
+	}
+	
+	public void onClick(View v) {
+		finish();
 	}
 }
