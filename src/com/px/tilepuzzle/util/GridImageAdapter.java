@@ -126,37 +126,6 @@ public class GridImageAdapter extends BaseAdapter {
 	private Integer[] grid_adapter_images;
 	private Context grid_adapter_context;
 	private Bitmap[] grid_adapter_cache;
-
-/*	// Constructor
-	public GridImageAdapter(Context c) {
-
-		grid_adapter_context = c;
-
-		// obtain a list of all of the objects in the R.drawable class
-		Field[] grid_adapter_gallery = R.drawable.class.getFields();
-
-		
-		int img_cnt = 0, img_length = grid_adapter_gallery.length;
-
-		for(int i=0; i < img_length; i++)
-			if(grid_adapter_gallery[i].getName().startsWith("puzzle_")) 
-				img_cnt++;
-
-
-		grid_adapter_images = new Integer[img_cnt];
-		grid_adapter_cache = new Bitmap[img_cnt];
-
-		int grid_img_idx = 0;
-
-		try {
-			for(int i=0; i < img_length; i++)
-				if(grid_adapter_gallery[i].getName().startsWith("puzzle_"))
-					grid_adapter_images[grid_img_idx++] = grid_adapter_gallery[i].getInt(null);
-		} catch(Exception e) {}
-		// safer: catch IllegalArgumentException & IllegalAccessException
-
-	}*/
-	
 	
 	// Constructor
 	public GridImageAdapter(Context c) {
@@ -230,7 +199,6 @@ public class GridImageAdapter extends BaseAdapter {
 	// create a new ImageView when requested
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		Log.i("GridImage", "I am In");
 		
 		ImageView board_View;
 

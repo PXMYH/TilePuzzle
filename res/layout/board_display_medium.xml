@@ -3,12 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-  <CheckBox android:id="@+id/alarm_enabled"
-    android:focusable="false"
-    android:gravity="center_vertical"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-
-
+    
 
 </LinearLayout>

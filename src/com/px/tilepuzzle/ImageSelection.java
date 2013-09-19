@@ -2,13 +2,11 @@ package com.px.tilepuzzle;
 
 
 import com.px.tilepuzzle.util.DisplaySolution;
-import com.px.tilepuzzle.util.ImageBreakdown;
 import com.px.tilepuzzle.util.ListImageAdapter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -19,7 +17,7 @@ import android.content.Intent;
 import android.view.View.OnClickListener;
 
 
-public class ImageSelection extends Activity implements OnItemClickListener {
+public class ImageSelection extends Activity implements OnItemClickListener, OnClickListener {
 	
 	private Button diff_button_easy, diff_button_medium, diff_button_hard;
 	
@@ -42,35 +40,22 @@ public class ImageSelection extends Activity implements OnItemClickListener {
         diff_button_medium = (Button)findViewById(R.id.Difficulty_Medium);
         diff_button_hard = (Button)findViewById(R.id.Difficulty_Hard);
         
-        diff_button_easy.setOnClickListener((OnClickListener) this);
+        diff_button_easy.setOnClickListener(this);
+        diff_button_medium.setOnClickListener(this);
+        diff_button_hard.setOnClickListener(this);
 	}
 	
 	public void onClick(View v) {
 		CharSequence text;
 
-		// find out which button was pushed based on its ID
 		switch(v.getId()) {
-			case R.id.Difficulty_Easy: text = "'accept' clicked!"; break;
-			case R.id.Difficulty_Hard: text = "'cancel' clicked!"; break;
-			default: text="Dunno what was pushed!";
+			case R.id.Difficulty_Easy: text = "Easy"; break;
+			case R.id.Difficulty_Medium: text = "Medium"; break;
+			case R.id.Difficulty_Hard: text = "Hard"; break;
+			default: text="Sry man~"; break;
 		}
 
-		// notify the user which button was clicked
 		showMessage(text);
-	}
-	
-	private void showMessage (CharSequence text) {
-    	Context context = getApplicationContext();
-		int duration = Toast.LENGTH_SHORT;
-		Toast toast = Toast.makeText(context, text, duration);
-		toast.show();    	
-    }
-	
-	
-	// Switch to another activity -- Display a full screen picture with breakdown solution image
-	public void ImageBreakdown(View v) {
-		Intent i = new Intent(this, ImageBreakdown.class);
-		startActivity(i);
 	}
 	
     public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -86,6 +71,14 @@ public class ImageSelection extends Activity implements OnItemClickListener {
     	// start our activity
     	startActivity(solution);
     }
+    
+	private void showMessage (CharSequence text) {
+    	Context context = getApplicationContext();
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();    	
+    }
+	
 	
 }
 

@@ -2,6 +2,7 @@ package com.px.tilepuzzle.util;
 
 import com.px.tilepuzzle.util.GridImageAdapter;
 
+import com.px.tilepuzzle.GamePlayEasy;
 import com.px.tilepuzzle.R;
 import com.px.tilepuzzle.R.id;
 import com.px.tilepuzzle.R.layout;
@@ -13,13 +14,11 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -104,7 +103,12 @@ public class DisplaySolution extends Activity implements OnClickListener{
         image.setOnClickListener(this);
 	}
 	
-	public void onClick(View v) {
-		finish();
-	}
+    public void onClick(View v) {
+    	//finish();
+    	
+		Intent play = new Intent(this, GamePlayEasy.class); 
+		play.putExtra("bitmap_scaled", this.getTaskId());
+		Log.i("Display Solution", "Inside click");
+    	startActivity(play);
+    }
 }
