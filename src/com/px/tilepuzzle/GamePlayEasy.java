@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View.OnClickListener;
 import android.widget.GridView;
 
-import com.px.tilepuzzle.util.GridImageAdapter;
 
 public class GamePlayEasy extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,7 @@ public class GamePlayEasy extends Activity {
         Bitmap.createBitmap(logo_orig, 0, 0, crop_width, crop_height);*/
         
         GridView board = (GridView) findViewById(R.id.board_display_easy_grid);
-        board.setAdapter(new GridImageAdapter (this));
+        //board.setAdapter(new GridImageAdapter (this));
         
         
         

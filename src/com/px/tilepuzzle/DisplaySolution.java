@@ -1,8 +1,9 @@
-package com.px.tilepuzzle.util;
+package com.px.tilepuzzle;
 
-import com.px.tilepuzzle.util.GridImageAdapter;
+import java.io.ByteArrayOutputStream;
 
-import com.px.tilepuzzle.GamePlayEasy;
+
+import com.px.tilepuzzle.GridImageAdapter;
 import com.px.tilepuzzle.R;
 import com.px.tilepuzzle.R.id;
 import com.px.tilepuzzle.R.layout;
@@ -31,9 +32,6 @@ import android.widget.AdapterView.OnItemClickListener;
  * to the user.*/
  
 public class DisplaySolution extends Activity implements OnClickListener{
-
-    private static final int num_vert_squares = 4;
-    private static final int num_hori_squares = 4 ;
     
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +43,7 @@ public class DisplaySolution extends Activity implements OnClickListener{
 
         // retrieve the ubc logo ID from the extras bundle
         int logo_id = (int)extras.getLong("ubc_logo");
+        Log.d("Display Solution", "received value:" + Integer.toString(logo_id));
         
         // Create a square bitmap image based on non-square logo retrieved
         Bitmap logo_orig = BitmapFactory.decodeResource(this.getResources(), logo_id);
@@ -104,11 +103,26 @@ public class DisplaySolution extends Activity implements OnClickListener{
 	}
 	
     public void onClick(View v) {
-    	//finish();
     	
-		Intent play = new Intent(this, GamePlayEasy.class); 
-		play.putExtra("bitmap_scaled", this.getTaskId());
-		Log.i("Display Solution", "Inside click");
-    	startActivity(play);
+    	// ** Passing bitmap image method #1:
+    	// * recreate bitmap and direct passing
+    	 v.setDrawingCacheEnabled(true);        
+         v.buildDrawingCache(true);
+         Bitmap bmp = Bitmap.createBitmap(v.getDrawingCache()); // creates immutable clone 
+    	 v.setDrawingCacheEnabled(false); // clear drawing cache
+    	 ByteArrayOutputStream stream = new ByteArrayOutputStream();
+    	 bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+    	 byte[] bmp_bytes = stream.toByteArray(); 
+    	 Intent play = new Intent(this, GamePlayMedium.class); 
+    	 play.putExtra("bitmap_scaled", bmp_bytes);
+    	 startActivity(play);
+    	
+    	// ** Passing bitmap image method #2:
+    	// * code image to byteArray and decode from the other side
+//		Intent play = new Intent(this, GamePlayMedium.class); 
+//		//play.putExtra("bitmap_scaled", this.image.toByteArray());
+//		Log.d("Display Solution", "passed Value:" + Integer.toString(v.getId()));
+//    	startActivity(play);
     }
+    
 }

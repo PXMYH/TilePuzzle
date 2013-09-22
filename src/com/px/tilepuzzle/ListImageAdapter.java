@@ -1,4 +1,4 @@
-package com.px.tilepuzzle.util;
+package com.px.tilepuzzle;
 
 import java.lang.reflect.Field;
 

@@ -11,6 +11,7 @@
     <string name="ubc_logo">Logo</string>
     <string name="index">Index</string>
     <string name="solution_display">Solution</string>
+    <string name="GamePlayBoardMedium">Tile Puzzle Level : Medium</string>
     
 
 </resources>

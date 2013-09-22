@@ -31,18 +31,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int puzzle_006=0x7f020006;
     }
     public static final class id {
-        public static final int Difficulty_Easy=0x7f070001;
-        public static final int Difficulty_Hard=0x7f070003;
-        public static final int Difficulty_Medium=0x7f070002;
-        public static final int board_display_easy_grid=0x7f07000a;
-        public static final int board_display_grid=0x7f070008;
-        public static final int button1=0x7f070009;
-        public static final int congrat_msg=0x7f070005;
-        public static final int congrat_msg2=0x7f070007;
-        public static final int image_list=0x7f070000;
-        public static final int solution_display=0x7f07000b;
-        public static final int step_num=0x7f070006;
-        public static final int total_steps=0x7f070004;
+        public static final int Difficulty_Easy=0x7f070003;
+        public static final int Difficulty_Hard=0x7f070005;
+        public static final int Difficulty_Medium=0x7f070004;
+        public static final int board_display_easy_grid=0x7f07000b;
+        public static final int board_display_grid=0x7f07000a;
+        public static final int board_display_medium_grid=0x7f07000e;
+        public static final int button1=0x7f070001;
+        public static final int button_easy=0x7f07000c;
+        public static final int button_medium=0x7f07000f;
+        public static final int congrat_msg=0x7f070007;
+        public static final int congrat_msg2=0x7f070009;
+        public static final int gameplaytestboard=0x7f070000;
+        public static final int image_list=0x7f070002;
+        public static final int solution_display=0x7f070010;
+        public static final int step_num=0x7f070008;
+        public static final int tile_puzzle_board_level_medium=0x7f07000d;
+        public static final int total_steps=0x7f070006;
     }
     public static final class layout {
         public static final int activity_game_play=0x7f030000;
@@ -55,6 +60,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int solution_display=0x7f030007;
     }
     public static final class string {
+        public static final int GamePlayBoardMedium=0x7f05000a;
         public static final int app_name=0x7f050000;
         public static final int congrat=0x7f050005;
         public static final int easy=0x7f050001;

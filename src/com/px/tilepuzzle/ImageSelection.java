@@ -1,12 +1,11 @@
 package com.px.tilepuzzle;
 
 
-import com.px.tilepuzzle.util.DisplaySolution;
-import com.px.tilepuzzle.util.ListImageAdapter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -67,6 +66,7 @@ public class ImageSelection extends Activity implements OnItemClickListener, OnC
     	// the intent so the activity is made aware which
     	// photo was selected.
     	solution.putExtra("ubc_logo", id);
+    	Log.d("Image Selection", "passed value:" + Float.toString(id));
 
     	// start our activity
     	startActivity(solution);

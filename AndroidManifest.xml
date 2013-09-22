@@ -18,8 +18,7 @@
         <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
         <activity
             android:name="com.px.tilepuzzle.ImageSelection"
-            android:label="@string/app_name"
-            >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -28,33 +27,28 @@
         
         <activity 
             android:name="com.px.tilepuzzle.GamePlay" 
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme" >
+            android:label="@string/app_name">
             
         </activity>
         
         <activity 
             android:name="com.px.tilepuzzle.YouWin" 
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"
-            android:theme="@style/FullscreenTheme" >
-            
+            android:label="@string/app_name" >
         </activity>
         
         <activity 
             android:name="com.px.tilepuzzle.GamePlayEasy" >
         </activity>
         
+        <activity 
+            android:name="com.px.tilepuzzle.GamePlayMedium" 
+            android:label="@string/app_name">
+        </activity>
+        
 
         <activity
-            android:name="com.px.tilepuzzle.util.DisplaySolution"
-            android:label="@string/solution_display"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name="com.px.tilepuzzle.DisplaySolution"
+            android:label="@string/app_name" >
         </activity>
         
     </application>
